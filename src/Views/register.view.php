@@ -30,6 +30,11 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
+                    <?php
+                    if (isset($error)) {
+                        echo $error . "\n";
+                    }
+                    ?>
                     <form action="/index.php?page=register" method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -66,6 +71,9 @@
                         </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit" name="submit">Submit</button>
+                        </div>
+                        <div class="p-t-15">
+                            <div><a class="row-space" href="/index.php?page=login">Login</a></div>
                         </div>
                     </form>
                 </div>
