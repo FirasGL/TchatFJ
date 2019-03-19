@@ -6,9 +6,7 @@
  * Time: 18:40
  */
 
-
-include_once('UserController.php');
-include_once('DashboardController.php');
+namespace TChatFJ\Controller;
 
 class DashboardController {
 
@@ -16,7 +14,7 @@ class DashboardController {
     {
     }
 
-    public function DashboardAction()
+    public function dashboardAction()
     {
     }
 }

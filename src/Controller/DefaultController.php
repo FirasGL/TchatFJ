@@ -6,24 +6,19 @@
  * Time: 18:33
  */
 
-include_once('UserController.php');
-include_once('DashboardController.php');
+namespace TChatFJ\Controller;
 
 class DefaultController {
 
-    public function __construct()
-    {
-        if (!isset($_SESSION['loggedIn'])) {
-            $controller = new UserController();
-            $controller->loginAction();
-        }
-        else {
-            $controller = new DashboardController();
-            $controller->DashboardAction();
-        }
-    }
-
     public function invoke()
     {
+        if (!isset($_SESSION['loggedIn'])) {
+            header("location: /index.php?page=login", true, 301);
+            exit();
+        }
+        else {
+            header("location: /index.php?page=dashboard", true, 301);
+            exit();
+        }
     }
 }

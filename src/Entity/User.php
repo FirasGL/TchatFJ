@@ -6,6 +6,8 @@
  * Time: 19:21
  */
 
+namespace TChatFJ\Entity;
+
 class User {
     /**
      * @var int

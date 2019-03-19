@@ -5,8 +5,7 @@
  * Date: 18/03/19
  * Time: 18:09
  */
-include "../src/Controller/DefaultController.php";
 
-$controller = new DefaultController();
-$controller->invoke();
+require_once "../vendor/autoload.php";
+\App::handleRequest();
 ?>

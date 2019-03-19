@@ -6,6 +6,8 @@
  * Time: 21:50
  */
 
+namespace TChatFJ\Controller;
+
 class BaseController {
 
     protected function render($template, $params = array())

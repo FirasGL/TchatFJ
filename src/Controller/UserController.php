@@ -6,13 +6,11 @@
  * Time: 18:39
  */
 
-include_once('UserController.php');
-include_once('DashboardController.php');
-include_once('../Repository/UserRepository.php');
+namespace TChatFJ\Controller;
+
+use TChatFJ\Repository\UserRepository;
 
 class UserController extends BaseController {
-
-    public function __construct(){}
 
     public function loginAction()
     {

@@ -6,6 +6,10 @@
  * Time: 20:16
  */
 
+namespace TChatFJ\Repository;
+
+use TChatFJ\Entity\User;
+
 include_once('../Entity/User.php');
 
 class UserRepository extends DBRepository {

@@ -6,15 +6,17 @@
  * Time: 20:31
  */
 
+namespace Infrastructure;
+
 class DBConfig
 {
     final public static function getDbConfig() {
         return array(
-            "database_host" => "localhost",
+            "database_host" => "127.0.0.1",
             "database_user" => "root",
             "database_password" => "root",
             "database_name" => "tchat_fj",
-            "database_port" => "",
+            "database_port" => "3306",
         );
     }
 }

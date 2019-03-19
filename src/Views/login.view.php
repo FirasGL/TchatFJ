@@ -10,7 +10,7 @@
             echo $error . "\n";
         }
         ?>
-        <form class="form-signin" action="/user/login" method="post">
+        <form class="form-signin" action="/index.php?page=login" method="post">
             <h2 class="form-signin-heading">Authentification</h2>
             <input type="text" name="username" id="username" class="form-control" placeholder="Login" required autofocus>
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
