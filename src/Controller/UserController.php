@@ -9,6 +9,7 @@
 namespace TChatFJ\Controller;
 
 use TChatFJ\Repository\UserRepository;
+use TChatFJ\Entity\User;
 
 class UserController extends BaseController {
 
@@ -24,11 +25,35 @@ class UserController extends BaseController {
                 $params['error'] = "Sorry, you entered an incorrect login or password";
             }
             else {
-                // @TODO Redirect to dashboard
-                return;
+                header("location: /index.php?page=dashboard", true, 301);
+                exit();
             }
         }
         $this->render('login.view.php', $params);
+    }
+
+    public function registerAction()
+    {
+        $params = array();
+        if(isset($_POST['username']) && isset($_POST['password'])) {
+            $userObject = array(
+                'username' => $_POST['username'],
+                'password' => $_POST['password'],
+                'firstname' => $_POST['firstname'] ? $_POST['firstname'] : NULL,
+                'lastname' => $_POST['lastname'] ? $_POST['lastname'] : NULL,
+            );
+            $user = new User($userObject);
+            $userRepo = new UserRepository();
+            list($registered, $msg) = $userRepo->registerUser($user);
+            if (!$registered) {
+                $params['error'] = $msg;
+            }
+            else {
+                header("location: /index.php?page=dashboard", true, 301);
+                exit();
+            }
+        }
+        $this->render('register.view.php', $params);
     }
 
 }

@@ -21,6 +21,10 @@ class App
             $controller = new UserController();
             $controller->loginAction();
         }
+        elseif (isset($_REQUEST['page']) && $_REQUEST['page'] == "register") {
+            $controller = new UserController();
+            $controller->registerAction();
+        }
         elseif (isset($_REQUEST['page']) && $_REQUEST['page'] == "dashboard") {
             $controller = new DashboardController();
             $controller->dashboardAction();

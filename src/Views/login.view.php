@@ -15,7 +15,7 @@
             <input type="text" name="username" id="username" class="form-control" placeholder="Login" required autofocus>
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
             <button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-            <div><a href="/user/register">Créer un compte</a></div>
+            <div><a href="/index.php?page=register">Create an account</a></div>
         </form>
     </div>
     </body>

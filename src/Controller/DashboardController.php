@@ -16,6 +16,7 @@ class DashboardController {
 
     public function dashboardAction()
     {
+        echo 'Welcome to dashboard tchat.';
     }
 }
 

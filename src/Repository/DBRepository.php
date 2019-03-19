@@ -12,7 +12,8 @@ use Infrastructure\DBConfig;
 
 class DBRepository {
 
-    public static function getDBInstance() {
+    public static function getDBInstance()
+    {
         $config = DBConfig::getDbConfig();
         $connectionDB = mysqli_connect($config['database_host'], $config['database_user'], $config['database_password'], $config['database_name'], $config['database_port']);
         if (!$connectionDB) {
@@ -23,7 +24,8 @@ class DBRepository {
         }
     }
 
-    public static function disconnectDB($connectionDB) {
+    public static function disconnectDB($connectionDB)
+    {
         mysqli_close($connectionDB);
     }
 }
