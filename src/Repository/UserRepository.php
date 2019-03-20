@@ -59,10 +59,10 @@ class UserRepository extends DBRepository {
             }
             else {
                 $userEntered->setPassword(password_hash($userEntered->getPassword(), PASSWORD_BCRYPT));
-                $result = $this->addUser($userEntered);
-                if ($result) {
+                list($added, $userID) = $this->addUser($userEntered);
+                if ($added && $userID) {
                     $registered = TRUE;
-                    $_SESSION['loggedIn'] = $result->getId();
+                    $_SESSION['loggedIn'] = $userID;
                 }
                 else {
                     $msg = "Something went wrong.";
@@ -76,14 +76,16 @@ class UserRepository extends DBRepository {
     {
         $DBInstance = $this->getDBInstance();
         $added = FALSE;
+        $userID = NULL;
         if ($userEntered) {
             $query = "
                 INSERT INTO `user` (`id`, `username`, `password`, `firstname`, `lastname`) VALUES
                     (NULL, '" . $userEntered->getUsername() . "', '" . $userEntered->getPassword() . "', '" . $userEntered->getFirstname() . "', '" . $userEntered->getLastname() . "');
                     ";
             $added = mysqli_query($DBInstance, $query);
+            $userID = mysqli_insert_id($DBInstance);
         }
         $this->disconnectDB($DBInstance);
-        return $added;
+        return array($added, $userID);
     }
 }

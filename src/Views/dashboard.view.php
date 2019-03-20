@@ -49,6 +49,7 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-warning btn-sm btn-send" id="btn-chat" type="submit">Send</button>
                             </span>
+                            <div><a class="row-space" href="/index.php?page=logout">Sign Out</a></div>
                         </form>
                     </div>
                 </div>

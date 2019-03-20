@@ -56,4 +56,11 @@ class UserController extends BaseController {
         $this->render('register.view.php', $params);
     }
 
+    public function logoutAction()
+    {
+        $_SESSION['loggedIn'] = NULL;
+        header("location: /index.php?page=login", true, 301);
+        exit();
+    }
+
 }

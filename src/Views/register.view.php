@@ -73,7 +73,7 @@
                             <button class="btn btn--radius-2 btn--blue" type="submit" name="submit">Submit</button>
                         </div>
                         <div class="p-t-15">
-                            <div><a class="row-space" href="/index.php?page=login">Login</a></div>
+                            <div><a class="row-space" href="/index.php?page=login">Sign In</a></div>
                         </div>
                     </form>
                 </div>

@@ -12,7 +12,7 @@ class DefaultController {
 
     public function invoke()
     {
-        if (!isset($_SESSION['loggedIn'])) {
+        if (!($_SESSION['loggedIn'])) {
             header("location: /index.php?page=login", true, 301);
             exit();
         }

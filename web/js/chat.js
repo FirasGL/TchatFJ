@@ -28,30 +28,32 @@ $(document).ready(function () {
     );
 
     $("#send-message").submit(function() {
-        var message = $("#message").val();
-        var userID = $("#user-id").val();
-        console.log(message);
-        $.ajax(
-            {
-                type : "POST",
-                dataType : "json",
-                url : "/index.php?page=ajax&action=sendMessage",
-                data : {
-                    'message': message,
-                    'userID': userID
-                },
-                success : function(data) {
-                    if (data) {
-                        let html = "<div class=\"chat-body chat-msg clearfix\">";
-                        html += "<div class=\"header\">";
-                        html += "<strong class=\"primary-font\">" + data['username'] + "</strong>";
-                        html += "<small class=\"pull-right text-muted\">";
-                        html += "<span class=\"glyphicon glyphicon-time\"></span>" + data['created_date'];
-                        html += "</small></div><p>" + data['message'] + "</p></div>";
-                        $("#msg-list").append(html);
+        let message = $("#message").val();
+        let userID = $("#user-id").val();
+        if (message && userID) {
+            $.ajax(
+                {
+                    type : "POST",
+                    dataType : "json",
+                    url : "/index.php?page=ajax&action=sendMessage",
+                    data : {
+                        'message': message,
+                        'userID': userID
+                    },
+                    success : function(data) {
+                        if (data) {
+                            let html = "<div class=\"chat-body chat-msg clearfix\">";
+                            html += "<div class=\"header\">";
+                            html += "<strong class=\"primary-font\">" + data['username'] + "</strong>";
+                            html += "<small class=\"pull-right text-muted\">";
+                            html += "<span class=\"glyphicon glyphicon-time\"></span>" + data['created_date'];
+                            html += "</small></div><p>" + data['message'] + "</p></div>";
+                            $("#msg-list").append(html);
+                            $("#message").val('');
+                        }
                     }
-                }
-            });
+                });
+        }
         return false;
     })
 
