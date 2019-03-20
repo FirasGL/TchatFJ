@@ -1,5 +1,4 @@
 #TChatFJ
-
 ##Requirement :
 - apache server <=2.4
 - php version <= 5.6
