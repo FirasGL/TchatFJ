@@ -8,7 +8,10 @@
 
 namespace TChatFJ\Controller;
 
-class DashboardController {
+use TChatFJ\Repository\MessageRepository;
+use TChatFJ\Entity\Message;
+
+class DashboardController extends BaseController {
 
     public function __construct()
     {
@@ -16,7 +19,9 @@ class DashboardController {
 
     public function dashboardAction()
     {
-        echo 'Welcome to dashboard tchat.';
+        $msgRepo = new MessageRepository();
+        $params['messages'] = $msgRepo->getMessages();
+        $this->render('dashboard.view.php', $params);
     }
 }
 

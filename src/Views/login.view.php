@@ -25,19 +25,6 @@
         <link href="/css/main.css" rel="stylesheet" media="all">
     </head>
     <body>
-    <div class="container">
-        <?php
-        if (isset($error)) {
-            echo $error . "\n";
-        }
-        ?>
-<!--        <form class="form-signin" action="/index.php?page=login" method="post">-->
-<!--            <h2 class="form-signin-heading">Authentification</h2>-->
-<!--            <input type="text" name="username" id="username" class="form-control" placeholder="Login" required autofocus>-->
-<!--            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>-->
-<!--            <button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>-->
-<!--            <div><a href="/index.php?page=register">Create an account</a></div>-->
-<!--        </form>-->
         <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
             <div class="wrapper wrapper--w680">
                 <div class="card card-4">
@@ -75,7 +62,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Jquery JS-->
     <script src="/vendor/jquery/jquery.min.js"></script>

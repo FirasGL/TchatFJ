@@ -10,8 +10,6 @@ namespace TChatFJ\Repository;
 
 use TChatFJ\Entity\User;
 
-include_once('../Entity/User.php');
-
 class UserRepository extends DBRepository {
 
     public function __construct() {

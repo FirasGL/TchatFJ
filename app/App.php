@@ -9,6 +9,7 @@
 use TChatFJ\Controller\UserController;
 use TChatFJ\Controller\DashboardController;
 use TChatFJ\Controller\DefaultController;
+use TChatFJ\Controller\AJAX;
 
 class App
 {
@@ -28,6 +29,14 @@ class App
         elseif (isset($_REQUEST['page']) && $_REQUEST['page'] == "dashboard") {
             $controller = new DashboardController();
             $controller->dashboardAction();
+        }
+        elseif (isset($_REQUEST['page']) && isset($_REQUEST['action']) && $_REQUEST['page'] == "ajax" && $_REQUEST['action'] == "getMessages") {
+            $controller = new AJAX();
+            $controller->getMessages();
+        }
+        elseif (isset($_REQUEST['page']) && isset($_REQUEST['action']) && $_REQUEST['page'] == "ajax" && $_REQUEST['action'] == "sendMessage") {
+            $controller = new AJAX();
+            $controller->sendMessage();
         }
         else {
             $controller = new DefaultController();
