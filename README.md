@@ -1,9 +1,10 @@
-#TChatFJ
-##Requirement :
+# TChatFJ
+
+## Requirement :
 - apache server <=2.4
 - php version <= 5.6
 
-##Installation guide :
+## Installation guide :
 
 * Clone the project ( you will get the default branch master )
 
@@ -29,7 +30,7 @@
           "database_port" => "<your_database_port>",
     );
 ```
-##Create a Virtual Host
+## Create a Virtual Host
 * Add the configuration file
 
 ```bash
