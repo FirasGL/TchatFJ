@@ -11,7 +11,7 @@
 ```bash
   git clone https://github.com/FirasGL/TchatFJ
 ```
-* Run this command in the root directory of the project to download all dependencies
+* Go to the root directory of the project, download composer (useful link https://getcomposer.org/download/) and run this command to download all dependencies
 
 ```bash
   php composer.phar install

@@ -47,13 +47,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password" required>
+                                    <input class="input--style-4" type="password" name="password" id="password" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Reconfirm Password</label>
-                                    <input class="input--style-4" type="password" required>
+                                    <input class="input--style-4" type="password" id="confirm_password" required>
                                 </div>
                             </div>
                             <div class="col-2">
@@ -80,6 +80,21 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var password = document.getElementById("password");
+        var confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword(){
+            if(password.value !== confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
 
     <!-- Jquery JS-->
     <script src="/vendor/jquery/jquery.min.js"></script>
